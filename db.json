@@ -209,6 +209,12 @@
             "quantity": 10,
             "price": 4.8,
             "type": "fruit"
+        },
+        "36": {
+            "name": "soviz",
+            "quantity": 2,
+            "price": 1.5,
+            "type": "sabzavot"
         }
     }
 }

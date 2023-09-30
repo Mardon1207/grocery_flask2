@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify,request
 from db import GroceryDB
 
 
@@ -10,14 +10,20 @@ db = GroceryDB()
 @app.route('/grocery')
 def all_grocery():
     """Get all grocery"""
-    pass
+    grocerys= db.all()
+    return jsonify(grocerys)
 
 
 # view add grocery
-@app.route('/grocery/add', methods=['POST'])
+@app.route('/grocery/add', methods=["POST"])
 def add_grocery():
     """Add a grocery"""
-    pass
+
+    body =request.get_json()
+
+    db.add(body)
+
+    return jsonify("succes")
 
 
 # view all grocery by type
